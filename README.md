@@ -1,15 +1,5 @@
 # Churn-Predictive-Modeling
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index b5137a130fa42279f2da38eb1bee33ef14bdd708..1b2e14c5a81948cb07c84fea59a8066edd2de1f8 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,98 @@
--# Churn-Predictive-Modeling
-+# Churn Predictive Modeling
-+
-+A starter project for building and evaluating machine-learning models that predict customer churn.
-+
+
 +## Overview
 +
 +Customer churn prediction helps identify which customers are most likely to leave so teams can proactively retain them. This repository is intended to host the end-to-end workflow for a churn modeling project, including:
@@ -104,6 +94,3 @@ index b5137a130fa42279f2da38eb1bee33ef14bdd708..1b2e14c5a81948cb07c84fea59a8066e
 +## License
 +
 +Add your preferred license (MIT, Apache-2.0, etc.) in a `LICENSE` file.
- 
-EOF
-)
