@@ -1,200 +1,120 @@
--# Churn-Predictive-Modeling
--
--+## Overview
--+
--+Customer churn prediction helps identify which customers are most likely to leave so teams can proactively retain them. This repository is intended to host the end-to-end workflow for a churn modeling project, including:
--+
--+- Data preparation and cleaning
--+- Exploratory analysis
--+- Feature engineering
--+- Model training and evaluation
--+- Inference and reporting
--+
--+## Project Goals
--+
--+- Build a reliable binary classification model for churn prediction
--+- Optimize for business-relevant metrics (for example, recall, precision, and ROC-AUC)
--+- Produce interpretable outputs to support customer retention decisions
--+- Keep the workflow reproducible and easy to extend
--+
--+## Suggested Repository Structure
--+
--+As you expand this project, consider organizing it like this:
--+
--+```text
--+.
--+├── data/
--+│   ├── raw/
--+│   ├── processed/
--+│   └── external/
--+├── notebooks/
--+├── src/
--+│   ├── data/
--+│   ├── features/
--+│   ├── models/
--+│   └── visualization/
--+├── tests/
--+├── reports/
--+│   └── figures/
--+├── requirements.txt
--+└── README.md
--+```
--+
--+## Typical Workflow
--+
--+1. **Ingest data** from source systems (CRM, billing, usage logs, support tickets, etc.).
--+2. **Clean and validate** the dataset (missing values, inconsistent labels, outliers).
--+3. **Engineer features** (tenure, engagement trends, payment behavior, support interactions).
--+4. **Train baseline models** (e.g., logistic regression, random forest, gradient boosting).
--+5. **Evaluate performance** using cross-validation and holdout sets.
--+6. **Interpret results** and prioritize actions for high-risk customer segments.
--+7. **Deploy/serve predictions** and monitor model drift over time.
--+
--+## Example Metrics to Track
--+
--+- **ROC-AUC**: overall ranking quality
--+- **Precision@K**: quality of top-risk predictions
--+- **Recall**: ability to catch likely churners
--+- **F1-score**: precision/recall balance
--+- **Calibration**: reliability of predicted probabilities
--+
--+## Getting Started
--+
--+1. Clone the repository:
--+
--+   ```bash
--+   git clone <your-repo-url>
--+   cd Churn-Predictive-Modeling
--+   ```
--+
--+2. (Optional) Create and activate a virtual environment:
--+
--+   ```bash
--+   python -m venv .venv
--+   source .venv/bin/activate
--+   ```
--+
--+3. Install project dependencies once a `requirements.txt` or `pyproject.toml` is added.
--+
--+## Next Steps
--+
--+- Add your dataset schema and data dictionary
--+- Add training and evaluation scripts under `src/`
--+- Add tests for preprocessing and model behavior
--+- Add experiment tracking (MLflow, Weights & Biases, or similar)
--+- Document model assumptions and retraining cadence
--+
--+## Contributing
--+
--+1. Create a feature branch
--+2. Make your changes
--+3. Add/update tests
--+4. Open a pull request with a clear summary of impact
--+
--+## License
--+
--+Add your preferred license (MIT, Apache-2.0, etc.) in a `LICENSE` file.
-+# Churn Predictive Modeling
-+
-+A practical template for building a **customer churn prediction pipeline** end to end.
-+
-+## Overview
-+
-+Customer churn modeling helps identify customers who are likely to leave so teams can proactively retain them. This repository is designed to support the full lifecycle of a churn project:
-+
-+- Data ingestion and validation
-+- Data cleaning and preprocessing
-+- Exploratory data analysis (EDA)
-+- Feature engineering
-+- Model training and evaluation
-+- Prediction, reporting, and monitoring
-+
-+## Project Goals
-+
-+- Build a reliable binary classification model for churn prediction
-+- Optimize for business-relevant metrics (for example: Recall, Precision, ROC-AUC)
-+- Keep model outputs interpretable for business teams
-+- Maintain a reproducible and extensible workflow
-+
-+## Recommended Repository Structure
-+
-+```text
-+.
-+├── data/
-+│   ├── raw/              # Original source data
-+│   ├── processed/        # Cleaned/model-ready datasets
-+│   └── external/         # Third-party/reference datasets
-+├── notebooks/            # EDA and experiments
-+├── src/
-+│   ├── data/             # Loading, validation, preprocessing
-+│   ├── features/         # Feature generation/selection
-+│   ├── models/           # Train/evaluate/inference code
-+│   └── visualization/    # Plotting/report utilities
-+├── tests/                # Unit/integration tests
-+├── reports/
-+│   └── figures/          # Generated charts and artifacts
-+├── requirements.txt      # Python dependencies
-+└── README.md
-+```
-+
-+## Typical Workflow
-+
-+1. **Ingest data** from source systems (CRM, billing, product usage, support tickets).
-+2. **Validate and clean** data (missing values, duplicates, outliers, schema drift).
-+3. **Engineer features** (tenure, engagement, billing behavior, support history).
-+4. **Train baseline models** (e.g., Logistic Regression, Random Forest, XGBoost).
-+5. **Evaluate models** with cross-validation and a holdout test set.
-+6. **Interpret results** to prioritize high-risk cohorts for retention actions.
-+7. **Deploy predictions** and monitor model/data drift over time.
-+
-+## Key Metrics to Track
-+
-+- **ROC-AUC**: ranking quality across thresholds
-+- **Precision**: proportion of predicted churners who truly churn
-+- **Recall**: proportion of churners correctly identified
-+- **F1-score**: balance between Precision and Recall
-+- **Precision@K**: quality of top-risk segment for outreach
-+- **Calibration**: reliability of predicted probabilities
-+
-+## Getting Started
-+
-+1. Clone the repository:
-+
-+   ```bash
-+   git clone <your-repo-url>
-+   cd Churn-Predictive-Modeling
-+   ```
-+
-+2. Create and activate a virtual environment:
-+
-+   ```bash
-+   python -m venv .venv
-+   source .venv/bin/activate
-+   ```
-+
-+3. Install dependencies (after adding `requirements.txt`):
-+
-+   ```bash
-+   pip install -r requirements.txt
-+   ```
-+
-+4. Start with EDA and baseline model development in `notebooks/` or `src/`.
-+
-+## Suggested Next Steps
-+
-+- Add a data dictionary and schema contract
-+- Add reusable training and inference scripts in `src/models/`
-+- Add tests for preprocessing and model behavior
-+- Add experiment tracking (e.g., MLflow or Weights & Biases)
-+- Add model monitoring and retraining cadence documentation
-+
-+## Contributing
-+
-+1. Create a feature branch
-+2. Make and test your changes
-+3. Update documentation when relevant
-+4. Open a pull request with a clear summary
-+
-+## License
-+
-+Add your preferred license (MIT, Apache-2.0, etc.) in a `LICENSE` file.
+# Customer Churn Predictive Modeling
+
+---
+
+## Case Study
+
+### Introduction
+Customer churn is one of the most costly and preventable problems in subscription-based businesses. Acquiring a new customer costs 5–7x more than retaining an existing one. Yet most companies only learn a customer has churned after they are already gone. This project is designed to reverse that dynamic: identify at-risk customers before they leave, so retention teams can act while there is still time.
+
+### Problem
+The core challenge is not just building a classifier — it is building one that is **useful for a business**. A model with 95% accuracy on a 95/5 class-imbalanced churn dataset tells you nothing useful. The real questions are:
+- Which customers are in the top decile of churn risk right now?
+- How confident is the model in that prediction?
+- What features are driving the risk for each customer?
+- What is the expected revenue impact of intervening?
+
+A technically correct model that cannot answer these questions will not get deployed.
+
+### Solution
+An end-to-end binary classification pipeline designed for operational use:
+
+1. **Data ingestion** from source systems: CRM records, billing history, product usage logs, support ticket interactions
+2. **Feature engineering** focused on behavioral signals:
+   - Tenure and engagement trends (usage frequency, session depth, feature adoption)
+   - Billing behavior (late payments, plan downgrades, discount usage)
+   - Support history (ticket volume, resolution time, satisfaction scores)
+   - Recency/Frequency/Monetary (RFM) features
+3. **Baseline models:** Logistic Regression, Random Forest, XGBoost / LightGBM
+4. **Evaluation framework:** Cross-validation + holdout test set, optimized for Recall and Precision@K — not raw accuracy
+5. **Interpretability layer:** SHAP values for per-customer explanation of risk drivers
+6. **Deployment:** Batch scoring pipeline with monitoring for model drift
+
+### Results
+> **Status: In progress.** The modeling pipeline and project structure are defined. Dataset integration and model training are the immediate next steps. Results will be published here upon completion.
+
+**Target metrics upon completion:**
+- ROC-AUC > 0.80 on holdout test set
+- Precision@10% > 60% (top 10% of predictions should be true churners)
+- Recall > 70% on the churn-positive class
+
+---
+
+## Tech Stack
+
+| Layer | Tools |
+|-------|-------|
+| Data processing | Python, Pandas, NumPy |
+| ML modeling | Scikit-learn, XGBoost, LightGBM |
+| Interpretability | SHAP |
+| Experiment tracking | MLflow (planned) |
+| Visualization | Matplotlib, Seaborn |
+| Validation | Stratified KFolds, calibration curves |
+
+---
+
+## Data Architecture
+
+```
+Source Systems
+├── CRM (customer demographics, account age, plan tier)
+├── Billing (payment history, MRR, downgrades)
+├── Product Usage (logins, feature usage, session length)
+└── Support (ticket count, resolution time, CSAT scores)
+         │
+         ▼
+Feature Store (processed, labeled, point-in-time correct)
+         │
+         ▼
+├── data/raw/          ← original source extracts
+├── data/processed/    ← cleaned, feature-engineered datasets
+└── data/external/     ← third-party enrichment (industry benchmarks)
+         │
+         ▼
+Model Training → Evaluation → Batch Scoring → Dashboard
+```
+
+---
+
+## Key Insights & Analytics
+
+> To be populated after model training. Expected findings based on domain literature:
+
+- **Engagement drop in the 30–60 day window** before churn is typically the strongest leading indicator — more predictive than any single demographic feature
+- **Support ticket spikes with negative sentiment** signal product frustration, not just usage problems
+- **Plan downgrade events** are lagging indicators — customers who downgrade have often already decided to leave
+- **High-value, long-tenure customers** who churn are the most costly — model should weight these in the loss function
+
+---
+
+## How to Reuse / Scale
+
+**Reuse on your own dataset:**
+1. Clone the repo
+2. Replace `data/raw/` with your churn-labeled dataset (minimum columns: customer_id, churn_label, and behavioral features)
+3. Update feature definitions in `src/features/`
+4. Run `notebooks/` for EDA, then `src/models/` for training
+
+**Scaling to large datasets (millions of customers):**
+- Replace Pandas with PySpark or Dask for feature engineering on distributed data
+- Use Databricks or AWS SageMaker for model training at scale
+- Implement real-time scoring via a feature store (Feast, Tecton) + REST API rather than batch scoring
+
+**Generalizes to:**
+- SaaS subscription churn
+- Telecom churn
+- Retail customer attrition
+- Financial product abandonment
+
+---
+
+## Challenges & What Could Be Improved
+
+| Challenge | Improvement Path |
+|-----------|-----------------|
+| No dataset integrated yet | Connect to a public churn dataset (Telco Customer Churn on Kaggle) as starting point |
+| Class imbalance (churn is typically 5–20% of customers) | SMOTE oversampling, cost-sensitive learning, or threshold tuning |
+| Model drift over time | Implement PSI (Population Stability Index) monitoring on feature distributions |
+| Interpretability gap | Add SHAP waterfall plots per customer for CRM integration |
+| No backtesting | Simulate historical intervention ROI: model's top-K predictions vs. actual retention outcomes |
+| Single model approach | Build a model ensemble: short-term risk (30-day) + long-term risk (90-day) for different intervention strategies |
