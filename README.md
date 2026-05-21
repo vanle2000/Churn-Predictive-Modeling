@@ -1,8 +1,3 @@
-diff --git a/README.md b/README.md
-index 6f6a7213e8964e71d3a63b71af4462d1057c9f3c..904bb14b0f04178d9810ebfd9739a8fa2ae16105 100644
---- a/README.md
-+++ b/README.md
-@@ -1,96 +1,104 @@
 -# Churn-Predictive-Modeling
 -
 -+## Overview
